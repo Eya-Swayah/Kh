@@ -9,39 +9,39 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-	<title>Save Employee</title>
+	<title>Save</title>
 </head>
 
 <body>
 
 	<div class="container">
 	
-		<h3>Employee Directory</h3>
+		<h3>New Information</h3>
 		<hr>
 		
 		<p class="h4 mb-4">Save Control</p>
 	
-		<form action="#" th:action="@{/controls/save}"
+		<form th:action="@{/controls/save}"
 						 th:object="${control}" method="POST">
 		
 			<!-- Add hidden form field to handle update -->
 			<input type="hidden" th:field="*{id}" />
 			
-			<input type="text" th:field="*{firstName}"
-					class="form-control mb-4 col-4" placeholder="First name">
+			<input type="text" th:field="*{place}"
+					class="form-control mb-4 col-4" placeholder="place">
 
-			<input type="text" th:field="*{lastName}"
-					class="form-control mb-4 col-4" placeholder="Last name">
+			<input type="text" th:field="*{temp}"
+					class="form-control mb-4 col-4" placeholder="temp">
 
-			<input type="text" th:field="*{email}"
-					class="form-control mb-4 col-4" placeholder="Email">
+			<input type="text" th:field="*{humidity}"
+					class="form-control mb-4 col-4" placeholder="Humidity">
 				
 			<button type="submit" class="btn btn-info col-2">Save</button>
 						
 		</form>
 	
 		<hr>
-		<a th:href="@{/employees/list}">Back to Employees List</a>
+		<a th:href="@{/controls/list}">Back to Controlss List</a>
 		
 	</div>
 </body>

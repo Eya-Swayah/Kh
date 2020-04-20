@@ -35,6 +35,7 @@ public class ControlController {
 		
 		// add to the spring model
 		theModel.addAttribute("controls", theControls);
+	
 		
 		return "control/list-controls";
 	}
@@ -61,7 +62,7 @@ public class ControlController {
 		theModel.addAttribute("control", theControl);
 		
 		// send over to our form
-		return "controls/control-form";			
+		return "control/control-form";			
 	}
 	
 	
@@ -72,7 +73,7 @@ public class ControlController {
 		controlService.save(theControl);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/employees/list";
+		return "redirect:/controls/list";
 	}
 	
 	

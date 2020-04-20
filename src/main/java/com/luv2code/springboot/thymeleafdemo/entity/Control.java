@@ -1,19 +1,22 @@
 package com.luv2code.springboot.thymeleafdemo.entity;
 
+import java.math.BigInteger;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "test")
 
 public class Control {
 
 	// define fields
 	
-	//@Id
+	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
-	private int id;
+	private BigInteger id;
 
-	private String room;
+	private String place;
 	
 
 	private String temp;
@@ -28,36 +31,36 @@ public class Control {
 		
 	}
 	
-	public Control(int id, String room, String temp, String humidity) {
+	public Control(BigInteger id, String place, String temp, String humidity) {
 		this.id = id;
-		this.room = room;
+		this.place = place;
 		this.temp= temp;
 		this.humidity  =humidity;
 	}
 
 
-	public Control(String room, String temp, String humidity) {
-		this.room = room;
+	public Control(String place, String temp, String humidity) {
+		this.place = place;
 		this.temp = temp;
 		this.humidity = humidity;
 	}
 
 	// define getter/setter
 	
-	public int getId() {
+	public BigInteger getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
-	public String getRoom() {
-		return room;
+	public String getplace() {
+		return place;
 	}
 
-	public void setRoom(String room) {
-		this.room = room;
+	public void setplace(String place) {
+		this.place = place;
 	}
 
 	public String getTemp() {
@@ -80,7 +83,7 @@ public class Control {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id +  ",room =" + room + ", temp=" + temp + ", humidity=" + humidity + "]";
+		return " [id=" + id +  ",place =" + place + ", temp=" + temp + ", humidity=" + humidity + "]";
 	}
 		
 }

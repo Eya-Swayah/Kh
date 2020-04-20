@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-	<title>Employee Directory</title>
+	<title>Directory</title>
 </head>
 
 <body>
@@ -22,14 +22,14 @@
 	<!-- Add a button -->
 	<a th:href="@{/controls/showFormForAdd}"
 		class="btn btn-primary btn-sm mb-3">
-		Add Employee
+		Add 
 	</a>
 	
 	
 	<table class="table table-bordered table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th>Room</th>
+				<th>Place</th>
 				<th>Température</th>
 				<th>Humidity</th>
 				<th>Action</th>
@@ -37,9 +37,9 @@
 		</thead>
 		
 		<tbody>
-			<tr th:each="tempControl: ${controls}">
+			<tr  th:each="tempControl: ${controls}">
 			
-				<td th:text="${tempControl.room}" />	
+				<td th:text="${tempControl.place}" />
 				<td th:text="${tempControl.temp}" />	
 				<td th:text="${tempControl.humidity}" />	
 				
@@ -48,7 +48,7 @@
 				
 					<div class="col-small">
 					<!-- Add "update" button/link -->
-					<form action="#" th:action="@{/controls/showFormForUpdate}" method="POST">
+					<form  th:action="@{/controls/showFormForUpdate}" method="POST">
 					
 						<input type="hidden" name="controlId" th:value="${tempControl.id}" />						
 						<button type="submit" class="btn btn-info btn-sm ml-3 mr-1">Update</button>
@@ -58,7 +58,7 @@
 					
 					<div class="col-small">
 					<!-- Add "delete" button/link -->					
-					<form action="#" th:action="@{/controls/delete}" method="POST">
+					<form th:action="@{/controls/delete}" method="POST">
 					
 						<input type="hidden" name="controlId" th:value="${tempControl.id}" />						
 						<button type="submit" class="btn btn-danger btn-sm"
