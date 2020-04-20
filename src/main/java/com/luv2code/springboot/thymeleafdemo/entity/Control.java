@@ -55,11 +55,11 @@ public class Control {
 		this.id = id;
 	}
 
-	public String getplace() {
+	public String getPlace() {
 		return place;
 	}
 
-	public void setplace(String place) {
+	public void setPlace(String place) {
 		this.place = place;
 	}
 
